@@ -1,0 +1,26 @@
+import java.util.*;
+public class Array{
+	public static void max_subarray_sum_Brute_force(int number[]){
+		int curr=0;
+		int max_sum=Integer.MIN_VALUE;
+		for(int i=0;i<number.length;i++){
+			int start=i;
+			for(int j=i;j<number.length;j++){
+				int end=j;
+				curr=0;
+				for(int k=start;k<=end;k++){
+					curr+=number[k];
+				}
+				System.out.println(curr+" ");
+				if(max_sum<curr){
+					max_sum=curr;
+				}
+			}
+		}
+		System.out.println( "max_sum="+max_sum+" ");
+	}
+	public static void main (String args[]){
+		int number[]={2,4,6,8,10};
+		max_subarray_sum_Brute_force(number);
+	}
+}
